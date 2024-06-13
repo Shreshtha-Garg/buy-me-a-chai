@@ -1,113 +1,108 @@
-import Image from "next/image";
-
+'use client';
+import Link from "next/link";
+import { useSession } from "next-auth/react";
+import Head from "next/head";
 export default function Home() {
+  const { data: session, status } = useSession(); // This will now only execute on the client side
+  const loading = status === "loading";
+
+  if (loading) {
+    // Render a loading indicator while session data is being fetched
+    return (<>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="-mt-[64px] relative text-white flex justify-center items-center z-[1111] bg-[#161a24]" style={{ height: "calc(100vh - 64px)" }}>
+        <img src="/output-onlinegiftools.gif" alt="" />
+      </div></>
+    );
+  }
+
+  if (session) {
+    var username = session.user.username;
+  }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <div className="text-white flex flex-col gap-2 sm:gap-4 items-center justify-center  border-b-2 border-gray-300 border-opacity-30">
+        <div className="text-3xl sm:text-4xl md:text-5xl font-bold flex justify-center items-center sm:gap-4">
+          <span className="pt-2 sm:pt-4 md:pt-8">Buy Me A Chai</span>
+          <span>
+            <img src="/output-onlinegiftools.gif" alt="Tea" className="h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32" />
+          </span>
+        </div>
+        <p className="text-sm sm:text-base md:text-lg text-center px-4 sm:px-6 md:px-0 max-w-3xl mb-2">
+          Empower your creative journey with a platform dedicated to helping developers secure funding for their projects. Launch your idea and watch it grow!
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <div className="flex justify-center items-center my-2 sm:my-3 md:my-4">
+          <Link href="/about">
+            <button
+              type="button"
+              className="text-white bg-[#3b4f63] hover:bg-slate-700 focus:bg-[#2f3e50] focus:outline-none font-medium rounded-lg text-xs sm:text-sm md:text-sm px-4 py-2 sm:px-5 sm:py-2.5 text-center inline-flex items-center me-1 sm:me-2 md:me-4 dark:bg-[rgb(41,53,72)] dark:hover:bg-slate-700"
+            >
+              <svg className="size-4 mr-1 mb-[2px]" fill="#ffffff" viewBox="-9.6 -9.6 115.20 115.20" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="rotate(0)"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g> <path d="M66,84H54V42a5.9966,5.9966,0,0,0-6-6H36a6,6,0,0,0,0,12h6V84H30a6,6,0,0,0,0,12H66a6,6,0,0,0,0-12Z"></path> <path d="M48,24A12,12,0,1,0,36,12,12.0119,12.0119,0,0,0,48,24Z"></path> </g> </g></svg>
+              Read more
+            </button>
+          </Link>
+
+          {session ? (
+            <Link href={"/" + username}> {/* If user is logged in, link to their page */}
+              <button
+                type="button"
+                className="text-white bg-[#3b4f63] hover:bg-slate-700 focus:bg-gray-800 focus:outline-none font-medium rounded-lg text-xs sm:text-sm md:text-sm px-4 py-2 sm:px-5 sm:py-2.5 text-center inline-flex items-center me-1 sm:me-2 md:me-4 dark:bg-[rgb(41,53,72)] dark:hover:bg-slate-700"
+              >
+                Your Profile
+                <svg className="rtl:rotate-180 w-3 h-3 sm:w-3.5 sm:h-3.5 ms-1 sm:ms-2 md:ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </button>
+            </Link>
+          ) : (
+            <Link href="/login"> {/* If user is not logged in, link to the login page */}
+              <button
+                type="button"
+                className="text-white bg-[#3b4f63] hover:bg-[#4a657d] focus:bg-[#2f3e50] focus:outline-none font-medium rounded-lg text-xs sm:text-sm md:text-sm px-4 py-2 sm:px-5 sm:py-2.5 text-center inline-flex items-center me-1 sm:me-2 md:me-4 dark:bg-[#2f3e50] dark:hover:bg-[#4a657d]"
+              >
+                Log in
+                <svg className="rtl:rotate-180 w-3 h-3 sm:w-3.5 sm:h-3.5 ms-1 sm:ms-2 md:ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </button>
+            </Link>
+          )}
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="text-white mx-auto lg:py-32 md:py-20 sm:py-12 py-8 container">
+        <div className="text-3xl md:text-5xl font-bold text-center lg:mb-16 md:mb-12 sm:mb-8 mb-4">How It Works</div>
+        <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap gap-12 xl:gap-[5vw] justify-center items-center">
+          <div className="flex flex-col items-center bg-[#1e2536] p-8 rounded-lg shadow-lg max-sm:w-[80vw] lg:w-[27vw] md:w-[35vw] transform transition duration-300 hover:scale-105">
+            <img src="/blueprint.gif" alt="" className="h-14 w-14 lg:h-20 lg:w-20 rounded-full mb-4" />
+            <div className="text-2xl md:text-3xl font-semibold text-center my-2">Create Your Project</div>
+            <div className="text-base md:text-lg text-center mt-5">
+              Kickstart your journey by setting up a project page. Describe your idea, set your funding goals, and let the community know why your project matters.
+            </div>
+          </div>
+          <div className="flex flex-col items-center bg-[#1e2536] p-8 rounded-lg shadow-lg max-sm:w-[80vw] lg:w-[27vw] md:w-[35vw] transform transition duration-300 hover:scale-105">
+            <img src="/share.gif" alt="" className="h-14 w-14 lg:h-20 lg:w-20 rounded-full mb-4" />
+            <div className="text-2xl md:text-3xl font-semibold text-center my-2">Share with the Community</div>
+            <div className="text-base md:text-lg text-center mt-5">
+              Spread the word! Share your project across social media and within the community to gather support. The more you share, the more likely you are to get funded.
+            </div>
+          </div>
+          <div className="flex flex-col items-center bg-[#1e2536] p-8 rounded-lg shadow-lg sm max-sm:w-[80vw] lg:w-[27vw] md:w-[35vw] transform transition duration-300 hover:scale-105">
+            <img src="/money.gif" alt="" className="h-14 w-14 lg:h-20 lg:w-20 rounded-full mb-4" />
+            <div className="text-2xl md:text-3xl font-semibold text-center my-2">Get Funded Quickly</div>
+            <div className="text-base md:text-lg text-center mt-5">
+              Watch the support roll in! Our platform ensures you receive funding quickly and securely. Focus on your project while we handle the rest.
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
+
