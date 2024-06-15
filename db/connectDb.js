@@ -1,18 +1,18 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-  // console.log("Inside connectDB function");
+  console.log("Inside connectDB function");
 
   if (mongoose.connections[0].readyState) {
-    // console.log("Already connected to the database");
+    console.log("Already connected to the database");
     // console.log(mongoose.connections[0].host);
     return;
   }
 
   try {
-    // console.log("Trying to connect to the database");
-       await mongoose.connect(process.env.MONGODB_URI);
-    // console.log(`MongoDB Connected: ${mongoose.connection.host}`);
+    console.log("Trying to connect to the database");
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log(`MongoDB Connected: ${mongoose.connection.host}`);
   } catch (error) {
     console.error(`Error connecting to the database: ${error.message}`);
     process.exit(1);
