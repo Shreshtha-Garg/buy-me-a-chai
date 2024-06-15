@@ -198,14 +198,12 @@ const PaymentPage = ({ username }) => {
             });
         }
     };
-    if (!dataFetched) {
-        return (
-            <div className="my-4 flex items-center justify-center h-[50vh]">
-                <img src="/output-onlinegiftools.gif" alt="Loading" className="md:size-40 size-32" />
-            </div>
-        );
-    }
-    else if (userNotFound) {
+    // if (!dataFetched) {
+    //     return (
+
+    //     );
+    // }
+    if (userNotFound) {
         return (
             <><ToastContainer
                 position="top-right"
@@ -227,7 +225,12 @@ const PaymentPage = ({ username }) => {
     }
     else
         return (
-            <>
+            <> 
+                {dataFetched?(""):(<div className='h-[100vh] w-full z-[1000] fixed bg-[#161a24]'>
+                    <div className="my-4 flex items-center justify-center h-[50vh]">
+                        <img src="/output-onlinegiftools.gif" alt="Loading" className="md:size-40 size-32" />
+                    </div>
+                </div>)}
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
@@ -347,8 +350,8 @@ const PaymentPage = ({ username }) => {
                                                 return (<li className="my-2 sm:my-4 flex gap-2 items-center">
                                                     <span>
                                                         <span className="font-semibold">No payments yet</span>
-                                                        <span className="text-gray-200">, 
-                                                            {(session && session.user.username === username)? (" share your payment link to get donations"):(" Be the first one to donate")}
+                                                        <span className="text-gray-200">,
+                                                            {(session && session.user.username === username) ? (" share your payment link to get donations") : (" Be the first one to donate")}
                                                         </span>
                                                     </span>
                                                 </li>)
