@@ -45,17 +45,19 @@ const PaymentPage = ({ username }) => {
                     setPayments(dbpayments);
                     // console.log('Payments:', dbpayments);
                     // console.log('u:', u);
+                    // alert("found user and payments")
                 }
-
+                setTimeout(() => {
+                    setdataFetched(true);
+                    // alert('data fetched set to true')
+                }, 200);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
         getData();
-        setInterval(() => {
-            setdataFetched(true);
-        }, 200);
     }, [username, searchParams]);
+
     useEffect(() => {
         const paymentDone = searchParams.get("paymentdone");
         if (paymentDone === "true") {
