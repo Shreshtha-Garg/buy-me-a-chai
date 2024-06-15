@@ -22,9 +22,9 @@ const handler = NextAuth({
         await connectDB();
     
         const user = await User.findOne({ email: credentials.email });
-        console.log(User);
-        console.log("credentials (next_auth_route.js): ", credentials);
-        console.log("user: ", user);
+        // console.log(User);
+        // console.log("credentials (next_auth_route.js): ", credentials);
+        // console.log("user: ", user);
         if (!user) {
           throw new Error('No user found with the email');
         }
