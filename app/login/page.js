@@ -10,9 +10,8 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    const [showPassword, setShowPassword] = useState(false); // State to control password visibility
+    const [showPassword, setShowPassword] = useState(false);
 
-    // Redirect to dashboard if user is already authenticated
     useEffect(() => {
         document.title = "Login | Buy Me A Chai";
         if (session) {
@@ -118,7 +117,7 @@ const Login = () => {
                                         type={showPassword ? "text" : "password"}
                                         autoComplete="current-password"
                                         required
-                                        className="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-600 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
+                                        className="password-input mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-600 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
                                         placeholder="Password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
@@ -153,6 +152,20 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <style jsx>{`
+                /* CSS to hide the Edge's built-in password toggle */
+                .password-input::-ms-reveal,
+                .password-input::-ms-clear {
+                    display: none;
+                }
+
+                /* Hide the built-in password toggle for Chrome, Safari, and Edge (Chromium-based) */
+                .password-input::-webkit-credentials-auto-fill-button,
+                .password-input::-webkit-autofill-button,
+                .password-input::-webkit-autofill {
+                    display: none !important;
+                }
+            `}</style>
         </div>
     );
 }
