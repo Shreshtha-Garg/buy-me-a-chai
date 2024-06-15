@@ -106,7 +106,7 @@ const PaymentPage = ({ username }) => {
                 makePayment.classList.add('hidden');
             }
         }
-    }, [session, username, dataFetched]);
+    }, [session, username]);
 
     const handlechange = (e) => {
         setPaymentform({ ...paymentform, [e.target.name]: e.target.value });
