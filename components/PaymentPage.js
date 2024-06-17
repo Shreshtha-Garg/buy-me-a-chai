@@ -156,7 +156,7 @@ const PaymentPage = ({ username }) => {
                 callback_url: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/razorpay`,
                 prefill: {
                     name: paymentform.name, // Your customer's name
-                    email: session.user.email,
+                    email: "",
                     contact: '9000090000', // Provide the customer's phone number for better conversion rates
                 },
                 notes: {
