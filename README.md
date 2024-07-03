@@ -1,7 +1,3 @@
-Sure, here's an updated version of your README file that provides a clear overview of your project, its purpose, and its technical details:
-
----
-
 # Buy Me a Chai
 
 Buy Me a Chai is a crowdfunding platform for developers and creators to get funds from their supporters. Inspired by Patreon and Buy Me a Coffee, this platform aims to provide a simple and effective way for creators to receive financial support for their work.
