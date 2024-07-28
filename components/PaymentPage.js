@@ -57,6 +57,16 @@ const PaymentPage = ({ username }) => {
         };
         getData();
     }, [username, searchParams]);
+ useEffect(() => {
+        if(userNotFound){
+            console.log('User not found');
+            setTimeout(() => {
+                router.push('/');
+            }, 5000);
+            console.log('User not found');
+        }
+    }, [userNotFound]);
+
 
     useEffect(() => {
         const paymentDone = searchParams.get("paymentdone");
