@@ -46,7 +46,12 @@ const PaymentPage = ({ username }) => {
                     // console.log('Payments:', dbpayments);
                     // console.log('u:', u);
                     // alert("found user and payments")
+                    // alert("found user and payments")
                 }
+                setTimeout(() => {
+                    setdataFetched(true);
+                    // alert('data fetched set to true')
+                }, 200);
                 setTimeout(() => {
                     setdataFetched(true);
                     // alert('data fetched set to true')
@@ -57,6 +62,7 @@ const PaymentPage = ({ username }) => {
         };
         getData();
     }, [username, searchParams]);
+
 
     useEffect(() => {
         const paymentDone = searchParams.get("paymentdone");
@@ -109,6 +115,7 @@ const PaymentPage = ({ username }) => {
             }
         }
     }, [session, username]);
+    }, [session, username]);
 
     const handlechange = (e) => {
         setPaymentform({ ...paymentform, [e.target.name]: e.target.value });
@@ -156,6 +163,7 @@ const PaymentPage = ({ username }) => {
                 callback_url: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/razorpay`,
                 prefill: {
                     name: paymentform.name, // Your customer's name
+                    email: "",
                     email:"", // Your customer's email
                     contact: '9000090000', // Provide the customer's phone number for better conversion rates
                 },
@@ -206,6 +214,12 @@ const PaymentPage = ({ username }) => {
     //     );
     // }
     if (userNotFound) {
+    // if (!dataFetched) {
+    //     return (
+
+    //     );
+    // }
+    if (userNotFound) {
         return (
             <><ToastContainer
                 position="top-right"
@@ -227,6 +241,12 @@ const PaymentPage = ({ username }) => {
     }
     else
         return (
+            <> 
+                {dataFetched?(""):(<div className='h-[100vh] w-full z-[1000] fixed bg-[#161a24]'>
+                    <div className="my-4 flex items-center justify-center h-[50vh]">
+                        <img src="/output-onlinegiftools.gif" alt="Loading" className="md:size-40 size-32" />
+                    </div>
+                </div>)}
             <> 
                 {dataFetched?(""):(<div className='h-[100vh] w-full z-[1000] fixed bg-[#161a24]'>
                     <div className="my-4 flex items-center justify-center h-[50vh]">
@@ -354,6 +374,8 @@ const PaymentPage = ({ username }) => {
                                                         <span className="font-semibold">No payments yet</span>
                                                         <span className="text-gray-200">,
                                                             {(session && session.user.username === username) ? (" share your payment link to get donations") : (" Be the first one to donate")}
+                                                        <span className="text-gray-200">,
+                                                            {(session && session.user.username === username) ? (" share your payment link to get donations") : (" Be the first one to donate")}
                                                         </span>
                                                     </span>
                                                 </li>)
@@ -425,6 +447,9 @@ const PaymentPage = ({ username }) => {
                                         <button className="bg-slate-700 hover:bg-slate-600 p-2 md:p-3 rounded-lg w-1/4 disabled:bg-slate-500 " disabled={paymentform.name?.length < 3 || paymentform.message?.length < 4 || paymentform.amount < 1} onClick={() => pay(Number.parseInt(paymentform.amount))}>Pay</button>
                                     </div>
                                     <div className="flex flex-row gap-2 2xl:gap-4 mt-5">
+                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(50)}>Donate ₹50</button>
+                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(100)}>Donate ₹100</button>
+                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(500)}>Donate ₹500</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(50)}>Donate ₹50</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(100)}>Donate ₹100</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(500)}>Donate ₹500</button>
