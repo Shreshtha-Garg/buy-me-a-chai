@@ -40,7 +40,7 @@ const UserList = async ({ query, page }) => {
     
     return (
         <div className=''>
-            <h1 className="py-8 text-2xl text-white">{currentUsers.length} Matched Users :</h1>
+            <h1 className="py-8 text-2xl text-white">{totalUsers} Matched Users :</h1>
             {currentUsers.length === 0 && (
                 <>
                     <p className="mt-4 font-semibold text-lg">No users found matching <span className='font-semibold'>'{query}'</span></p>
