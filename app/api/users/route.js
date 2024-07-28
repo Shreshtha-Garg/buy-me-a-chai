@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   // console.log("Connected to DB");
 
   const { q } = req.query;
-
+  // console.log("Query is ", q);
   try {
     const users = await User.find({
       $or: [

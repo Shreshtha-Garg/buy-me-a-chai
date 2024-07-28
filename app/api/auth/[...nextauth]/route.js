@@ -20,20 +20,23 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         await connectDB();
-
+    
         const user = await User.findOne({ email: credentials.email });
+        // console.log(User);
+        // console.log("credentials (next_auth_route.js): ", credentials);
+        // console.log("user: ", user);
         if (!user) {
           throw new Error('No user found with the email');
         }
-
+    
         const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
         if (!isPasswordValid) {
           throw new Error('Invalid password');
         }
-
+    
         return user;
       }
-    })
+    })    
   ],
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {

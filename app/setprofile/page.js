@@ -145,6 +145,14 @@ const SetProfile = () => {
                                     </div>
                                 )}
                             </div>
+                            <style jsx>{`
+                                #razorpay_id::-ms-reveal {
+                                    display: none;
+                                }
+                                #razorpay_id::-webkit-textfield-decoration-container {
+                                    display: none;
+                                }
+                            `}</style>
                         </div>
                         <div className="relative">
                             <label htmlFor="razorpay_secret" className="block text-gray-300 text-sm sm:text-base">Razorpay Secret :</label>
@@ -160,6 +168,14 @@ const SetProfile = () => {
                                     </div>
                                 )}
                             </div>
+                            <style jsx>{`
+                                #razorpay_secret::-ms-reveal {
+                                    display: none;
+                                }
+                                #razorpay_secret::-webkit-textfield-decoration-container {
+                                    display: none;
+                                }
+                            `}</style>
                         </div>
                         <div>
                             <label htmlFor="linkedin" className="block text-gray-300 text-sm sm:text-base">LinkedIn Profile Link:</label>
@@ -180,7 +196,6 @@ const SetProfile = () => {
                     </div>
                 </form>
             </div>
-            
         </>
     );
 };

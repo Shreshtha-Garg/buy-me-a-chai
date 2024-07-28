@@ -34,6 +34,11 @@ export default function Home() {
             <img src="/output-onlinegiftools.gif" alt="Tea" className="h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32" />
           </span>
         </div>
+        <div className="chaiGIF ">
+          <video autoPlay loop muted playsInline className="lg:w-full w-1/2 sm:w-3/4 mx-auto">
+            <source src="/bill-gates-dolly.mp4" type="video/mp4" />
+          </video>
+        </div>
         <p className="text-sm sm:text-base md:text-lg text-center px-4 sm:px-6 md:px-0 max-w-3xl mb-2">
           Empower your creative journey with a platform dedicated to helping developers secure funding for their projects. Launch your idea and watch it grow!
         </p>

@@ -22,6 +22,8 @@
     "use-debounce": "^10.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "babel-loader": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",

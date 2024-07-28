@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { react, useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 import Image from 'next/image';
+
 const UpdateProfile = () => {
     const { data: session, update } = useSession();
     const router = useRouter();
@@ -44,7 +45,6 @@ const UpdateProfile = () => {
         const usernameRegex = /^[a-zA-Z0-9._]{1,30}$/;
         return usernameRegex.test(username);
     }
-    
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -69,7 +69,7 @@ const UpdateProfile = () => {
         }
         const response = await updateProfile(form, session.user.username);
         if (response.success) {
-            toast(response.message +", redirecting", {
+            toast(response.message + ", redirecting", {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -81,7 +81,7 @@ const UpdateProfile = () => {
                 transition: Bounce,
             });
             setTimeout(() => {
-                router.push('/' + form.username)
+                router.push('/' + form.username);
             }, 3000);
 
             update(); // update session if needed
@@ -134,23 +134,20 @@ const UpdateProfile = () => {
                         </div>
                         <div>
                             <label htmlFor="username" className="block text-gray-300 text-sm sm:text-base">Username:</label>
-                            <input value={form.username} onChange={handleChange} 
-                            required="true" type="text" id="username" name="username" className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base" />
+                            <input value={form.username} onChange={handleChange} required type="text" id="username" name="username" className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base" />
                         </div>
                         <div>
                             <label htmlFor="name" className="block text-gray-300 text-sm sm:text-base">Name:</label>
-                            <input value={form.name} onChange={handleChange} type="text" id="name" name="name" className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base" placeholder="Enter your name" 
-                            required="true"
-                            />
+                            <input value={form.name} onChange={handleChange} type="text" id="name" name="name" className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base" placeholder="Enter your name" required />
                         </div>
                         <div className="md:col-span-2">
                             <label htmlFor="bio" className="block text-gray-300 text-sm sm:text-base ">Bio:</label>
                             <textarea value={form.bio} onChange={handleChange} id="bio" name="bio" className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base resize-none" rows="3" placeholder="Something about yourself..."></textarea>
                         </div>
-                        <div className='relative'>
+                        <div className="relative">
                             <label htmlFor="razorpay_id" className="block text-gray-300 text-sm sm:text-base">Razorpay ID :</label>
-                            <input value={form.razorpay_id} onChange={handleChange} type={showRazorpayId ? 'text' : 'password'} id="razorpay_id" name="razorpay_id"  className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base" placeholder="Enter your Razorpay ID" />
-                            <div className='absolute top-8 max-sm:top-[26px] right-4 flex items-center cursor-pointer' onClick={() => setShowRazorpayId(!showRazorpayId)} title={showRazorpayId ? "Hide Razorpay ID" : "Show Razorpay ID"}>
+                            <input value={form.razorpay_id} onChange={handleChange} type={showRazorpayId ? 'text' : 'password'} id="razorpay_id" name="razorpay_id" className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base" placeholder="Enter your Razorpay ID" />
+                            <div className="absolute top-8 max-sm:top-[26px] right-4 flex items-center cursor-pointer" onClick={() => setShowRazorpayId(!showRazorpayId)} title={showRazorpayId ? "Hide Razorpay ID" : "Show Razorpay ID"}>
                                 {showRazorpayId ? (
                                     <div className="tooltip">
                                         <Image src="/eye-close.svg" alt="Show Razorpay ID" width="32" height="32" />
@@ -161,11 +158,16 @@ const UpdateProfile = () => {
                                     </div>
                                 )}
                             </div>
+                            <style jsx>{`
+                                #razorpay_id::-ms-reveal {
+                                    display: none;
+                                }
+                            `}</style>
                         </div>
-                        <div className='relative'>
+                        <div className="relative">
                             <label htmlFor="razorpay_secret" className="block text-gray-300 text-sm sm:text-base">Razorpay Secret :</label>
                             <input value={form.razorpay_secret} onChange={handleChange} type={showRazorpaySecret ? 'text' : 'password'} id="razorpay_secret" name="razorpay_secret" className="w-full mt-1 p-2 bg-gray-700 text-gray-300 rounded-lg text-sm sm:text-base" placeholder="Enter your Razorpay Secret" />
-                            <div className='absolute top-8 max-sm:top-[26px] right-4 flex items-center cursor-pointer' onClick={() => setShowRazorpaySecret(!showRazorpaySecret)} title={showRazorpaySecret ? "Hide Razorpay Secret" : "Show Razorpay Secret"}>
+                            <div className="absolute top-8 max-sm:top-[26px] right-4 flex items-center cursor-pointer" onClick={() => setShowRazorpaySecret(!showRazorpaySecret)} title={showRazorpaySecret ? "Hide Razorpay Secret" : "Show Razorpay Secret"}>
                                 {showRazorpaySecret ? (
                                     <div className="tooltip">
                                         <Image src="/eye-close.svg" alt="Show Razorpay Secret" width="32" height="32" />
@@ -176,6 +178,11 @@ const UpdateProfile = () => {
                                     </div>
                                 )}
                             </div>
+                            <style jsx>{`
+                                #razorpay_secret::-ms-reveal {
+                                    display: none;
+                                }
+                            `}</style>
                         </div>
                         <div>
                             <label htmlFor="linkedin" className="block text-gray-300 text-sm sm:text-base">LinkedIn Profile Link:</label>

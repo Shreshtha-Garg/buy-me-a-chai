@@ -52,11 +52,11 @@ const Navbar = () => {
     <div>
       <nav className="bg-[#020512] fixed w-full text-gray-200 flex justify-between max-[350px]:px-1 px-2 sm:px-4 md:px-6 h-16 items-center border-b-[0.5px] border-opacity-50 border-gray-50 z-[100]">
         <div className="logo font-bold text-lg md:text-2xl flex items-end justify-center max-[350px]:gap-0 gap-1 sm:gap-2">
-          <button className="md:hidden text-gray-300 focus:outline-none">
+          {/* <button className="md:hidden text-gray-300 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
-          </button>
+          </button> */}
           <Link className="flex items-end " href={"/"}>
             <span><img src="/favicon.png" alt="Chai" className="h-10 min-w-10 md:h-12 md:w-12" /></span>
             <span className='text hidden md:flex min-w-fit text-nowrap'>Buy Me a Chai</span>
