@@ -87,8 +87,8 @@ const handler = NextAuth({
       if (user) {
         token.username = user.username;
       }
-      // console.log("token (next_auth_route.js): ", token);
-      // console.log("token username: ", token.username);
+      console.log("token (next_auth_route.js): ", token);
+      console.log("token username: ", token.username);
       return token;
     },
   },
