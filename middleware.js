@@ -7,7 +7,8 @@ export async function middleware(request) {
 
     // Check if there are any cookies in the request
     const token = request.cookies.get('next-auth.session-token')?.value;
-
+    console.log("Cookies are :");
+    console.log(request.cookies);
     if (!token) {
         console.log("Token not found in cookies");
         return NextResponse.next();
