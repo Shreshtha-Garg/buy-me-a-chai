@@ -46,12 +46,7 @@ const PaymentPage = ({ username }) => {
                     // console.log('Payments:', dbpayments);
                     // console.log('u:', u);
                     // alert("found user and payments")
-                    // alert("found user and payments")
                 }
-                setTimeout(() => {
-                    setdataFetched(true);
-                    // alert('data fetched set to true')
-                }, 200);
                 setTimeout(() => {
                     setdataFetched(true);
                     // alert('data fetched set to true')
@@ -62,7 +57,6 @@ const PaymentPage = ({ username }) => {
         };
         getData();
     }, [username, searchParams]);
-
 
     useEffect(() => {
         const paymentDone = searchParams.get("paymentdone");
@@ -162,7 +156,6 @@ const PaymentPage = ({ username }) => {
                 callback_url: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/razorpay`,
                 prefill: {
                     name: paymentform.name, // Your customer's name
-                    email: "",
                     email: "", // Your customer's email
                     contact: '9000090000', // Provide the customer's phone number for better conversion rates
                 },
@@ -482,6 +475,7 @@ const PaymentPage = ({ username }) => {
                 </>
             )
     }
+}
 }
 
 export default PaymentPage
