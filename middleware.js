@@ -9,6 +9,8 @@ export async function middleware(request) {
     const token = request.cookies.get('next-auth.session-token')?.value;
     console.log("Cookies are :");
     console.log(request.cookies);
+    console.log("Token is :");
+    console.log(token);
     if (!token) {
         console.log("Token not found in cookies");
         return NextResponse.next();
