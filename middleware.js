@@ -21,7 +21,7 @@ export async function middleware(request) {
     try {
         const secret = process.env.NEXTAUTH_SECRET;
         const decoded = await getToken({ req: request, secret });
-        // console.log(decoded);
+        console.log(decoded);
         if (decoded) {
             if (['/login', '/signup', '/setprofile'].includes(request.nextUrl.pathname)) {
                 console.log("Redirecting to:", `/${decoded.username}`);
