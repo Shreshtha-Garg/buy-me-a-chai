@@ -21,7 +21,7 @@ export async function middleware(request) {
         // console.log(decoded);
         if (decoded) {
             if (['/login', '/signup', '/setprofile'].includes(request.nextUrl.pathname)) {
-                // console.log("Redirecting to:", `/${decoded.username}`);
+                console.log("Redirecting to:", `/${decoded.username}`);
                 return NextResponse.redirect(new URL(`/${decoded.username}`, request.url));
             }
         }
