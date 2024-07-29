@@ -1,4 +1,3 @@
-// app/api/users.js
 
 import connectDB from '@/db/connectDb';
 import User from '@/models/User';

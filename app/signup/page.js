@@ -14,12 +14,12 @@ const Signup = () => {
     const router = useRouter();
     const { data: session, status } = useSession();
 
-    useEffect(() => {
-        // If the user is logged in, redirect to their page
-        // if (status === 'authenticated' && session) {
-        //     router.push(`/${session.user.username}`);
-        // }
-    }, [status, session, router]);
+    // useEffect(() => {
+    //     // If the user is logged in, redirect to their page
+    //     // if (status === 'authenticated' && session) {
+    //     //     router.push(`/${session.user.username}`);
+    //     // }
+    // }, [status, session, router]);
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);

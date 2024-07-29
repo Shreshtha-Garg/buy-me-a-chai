@@ -1,13 +1,16 @@
-
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
 export async function middleware(request) {
-    // console.log("Inside middleware fn");
+    // Debug: Log the incoming request URL
+    // console.log("Incoming request URL:", request.url);
 
     // Check if there are any cookies in the request
     const token = request.cookies.get('next-auth.session-token')?.value;
-
+    console.log("Cookies are :");
+    console.log(request.cookies);
+    console.log("Token is :");
+    console.log(token);
     if (!token) {
         console.log("Token not found in cookies");
         return NextResponse.next();
@@ -17,13 +20,13 @@ export async function middleware(request) {
 
     try {
         const secret = process.env.NEXTAUTH_SECRET;
+        console.log("secret is : ",secret);
+        console.log("request is : ",request);
         const decoded = await getToken({ req: request, secret });
-
+        console.log("decoded token is : ",decoded);
         if (decoded) {
-            // console.log("Decoded token:", decoded);
-
-            if (request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/signup' || request.nextUrl.pathname === '/setprofile') {
-                // console.log("Redirecting to username page");
+            if (['/login', '/signup', '/setprofile'].includes(request.nextUrl.pathname)) {
+                console.log("Redirecting to:", `/${decoded.username}`);
                 return NextResponse.redirect(new URL(`/${decoded.username}`, request.url));
             }
         }
