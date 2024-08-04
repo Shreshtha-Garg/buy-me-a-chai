@@ -441,9 +441,6 @@ const PaymentPage = ({ username }) => {
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(50)}>Donate ₹50</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(100)}>Donate ₹100</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(500)}>Donate ₹500</button>
-                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(50)}>Donate ₹50</button>
-                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(100)}>Donate ₹100</button>
-                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(500)}>Donate ₹500</button>
                                     </div>
                                 </div>) : (
                                     //show that this user has not set up payment yet
