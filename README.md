@@ -10,7 +10,7 @@
 
 Buy Me a Chai is a full-stack MERN application powered by **Next.js 14 (App Router)** and **Razorpay**, enabling developers to create shareable profiles and receive payments in real-time.
 
-Built with 💙 using:
+Built using:
 
 - **Frontend**: React, Next.js, Tailwind CSS
 - **Backend**: Node.js, Express.js, MongoDB
