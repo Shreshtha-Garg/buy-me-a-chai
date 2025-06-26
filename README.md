@@ -1,6 +1,6 @@
 # ☕ Buy Me a Chai
 
-A fun and friendly crowdfunding platform where creators and developers can receive support from fans—just like Patreon or Buy Me a Coffee. Think of it as a digital way to say *"Thanks for your work, here's a chai!"*
+**Buy Me a Chai** is a fun and friendly crowdfunding platform where creators and developers can receive support from fans—just like Patreon or Buy Me a Coffee. Think of it as a digital way to say *"Thanks for your work, here's a chai!"*
 
 🔗 **Live Demo**: [https://buy-me-a-chai-ten.vercel.app/](https://buy-me-a-chai-ten.vercel.app/)
 
@@ -8,76 +8,77 @@ A fun and friendly crowdfunding platform where creators and developers can recei
 
 ## 🚀 Overview
 
-**Buy Me a Chai** is a full-stack web app built with the **MERN stack**, **Next.js App Router**, and **Tailwind CSS**. It offers a clean and smooth experience for users to receive or send monetary support. Razorpay powers secure payments, and authentication is handled via GitHub or email/password.
+Buy Me a Chai is a full-stack MERN application powered by **Next.js 14 (App Router)** and **Razorpay**, enabling developers to create shareable profiles and receive payments in real-time.
+
+Built with 💙 using:
+
+- **Frontend**: React, Next.js, Tailwind CSS
+- **Backend**: Node.js, Express.js, MongoDB
+- **Auth**: GitHub OAuth + Credentials (NextAuth)
+- **Payments**: Razorpay
+- **UI Tools**: React Toastify, bcryptjs, JWT
 
 ---
 
-## 🧩 Tech Stack
-
-* **Frontend**: React, Next.js 14 (App Router), Tailwind CSS
-* **Backend**: Node.js, Express.js, MongoDB
-* **Authentication**: NextAuth (GitHub + Credentials)
-* **Payments**: Razorpay
-* **Other Tools**: React Toastify, bcryptjs, JWT, use-debounce
-
----
-
-## ✨ Key Features
+## ✨ Features
 
 ### 🔐 User Authentication
 
-Login/signup using GitHub OAuth or email-password (NextAuth).
+Login or Sign up via GitHub or email/password using NextAuth.
 
-📸 [Login Screen](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/login.png)
-📸 [Signup Screen](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/signup.png)
+📸 [Login Page](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/login.png)  
+📸 [Signup Page](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/signup.png)
 
 ---
 
-### 👤 Creator Profiles
+### 👤 User Profile
 
-Every user gets a public profile page with a cover image, bio, and donation options.
+Each user gets a shareable public profile with their bio, image, and a donation button.
 
 📸 [User Profile](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/profile.png)
 
 ---
 
-### 💸 Razorpay Payment Integration
-
-Support creators with real-time, secure payments via Razorpay.
-
-📸 [Payment Modal](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/razorpay.png)
-📸 [Payment Success Toast](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/success-toast.png)
-
----
-
 ### ✏️ Edit Profile
 
-Creators can update name, bio, profile picture, and cover photo.
+Update your username, name, bio, profile pic, and cover image.
 
 📸 [Edit Profile](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/edit-profile.png)
 
 ---
 
-### 🔍 Search & Discover
+### 💸 Razorpay Integration
 
-Search for any user by name using the smart search bar with debounce.
+Make real-time payments to support creators securely via Razorpay.
 
-📸 [Search Users](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/search.png)
-
----
-
-### 📱 Responsive UI
-
-Optimized for all screen sizes using Tailwind CSS. Clean, minimal, and mobile-first design.
+📸 [Razorpay Modal](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/razorpay.png)  
+📸 [Payment Success Toast](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/success-toast.png)
 
 ---
 
-## 💡 Why This Project?
+### 🔍 User Search
 
-This project was built as a creative take on peer-to-peer support systems, focusing on simplicity, clean UI, and real-time payment integration. It was also a great opportunity to work hands-on with Razorpay and build a production-ready Next.js App Router app.
+Find creators instantly with a smart debounced search bar.
+
+📸 [Search Feature](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/search.png)
 
 ---
 
-## 🧾 License
+### 📱 Fully Responsive Design
+
+Works perfectly on phones, tablets, and desktops.
+
+📸 [Responsive - Mobile View](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/responsive-mobile.png)  
+📸 [Responsive - Tablet View](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/responsive-tablet.png)
+
+---
+
+## 💬 Made With Love
+
+Made with ❤️ by [Shreshtha Garg](https://www.linkedin.com/in/shreshtha-garg-557681259)
+
+---
+
+## 📜 License
 
 MIT License
