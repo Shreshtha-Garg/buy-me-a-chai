@@ -212,11 +212,6 @@ const PaymentPage = ({ username }) => {
             });
         }
     };
-    // if (!dataFetched) {
-    //     return (
-
-    //     );
-    // }
     if (userNotFound) {
         return (
             <><ToastContainer
@@ -438,9 +433,6 @@ const PaymentPage = ({ username }) => {
                                         <button className="bg-slate-700 hover:bg-slate-600 p-2 md:p-3 rounded-lg w-1/4 disabled:bg-slate-500 " disabled={paymentform.name?.length < 3 || paymentform.message?.length < 4 || paymentform.amount < 1} onClick={() => pay(Number.parseInt(paymentform.amount))}>Pay</button>
                                     </div>
                                     <div className="flex flex-row gap-2 2xl:gap-4 mt-5">
-                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(50)}>Donate ₹50</button>
-                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(100)}>Donate ₹100</button>
-                                        <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(500)}>Donate ₹500</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(50)}>Donate ₹50</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(100)}>Donate ₹100</button>
                                         <button className="bg-slate-700 hover:bg-slate-600 2xl:p-4 p-2.5 rounded-lg w-full" onClick={() => pay(500)}>Donate ₹500</button>
