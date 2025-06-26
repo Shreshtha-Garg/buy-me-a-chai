@@ -75,7 +75,7 @@ Works perfectly on phones, tablets, and desktops.
 
 ## 💬 Made With Love
 
-Made with ❤️ by [Shreshtha Garg](https://www.linkedin.com/in/shreshtha-garg-557681259)
+Made with ❤️ by [Shreshtha Garg](https://www.linkedin.com/in/shreshth-garg-3ba629208/)
 
 ---
 
