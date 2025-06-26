@@ -22,54 +22,69 @@ Built using:
 
 ## ✨ Features
 
+### 🏠 Homepage
+
+#### 🌟 Public Homepage  
+![Home Page](images/homePage.png)
+
+---
+
 ### 🔐 User Authentication
 
-Login or Sign up via GitHub or email/password using NextAuth.
+#### 🔑 Login Page  
+![Login Page](images/login.png)
 
-📸 [Login Page](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/login.png)  
-📸 [Signup Page](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/signup.png)
-
----
-
-### 👤 User Profile
-
-Each user gets a shareable public profile with their bio, image, and a donation button.
-
-📸 [User Profile](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/profile.png)
+#### 🆕 Signup Page  
+![Signup Page](images/signup.png)
 
 ---
 
-### ✏️ Edit Profile
+### 👤 Profile Management
 
-Update your username, name, bio, profile pic, and cover image.
+#### 👨‍💻 Set Up Your Profile  
+![Set Profile](images/set-profile.png)
 
-📸 [Edit Profile](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/edit-profile.png)
+#### 🧾 Public User Profile  
+![User Profile](images/profile.png)
 
 ---
 
 ### 💸 Razorpay Integration
 
-Make real-time payments to support creators securely via Razorpay.
+#### 💳 Payment Modal  
+![Razorpay Modal](images/razorpay.png)
 
-📸 [Razorpay Modal](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/razorpay.png)  
-📸 [Payment Success Toast](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/success-toast.png)
+#### ✅ Payment Success  
+![Payment Success](images/Razorpay-success.png)
+
+#### 🧾 Make a Payment  
+![Make Payment Page](images/make-payment.png)
 
 ---
 
-### 🔍 User Search
+### 📊 Supporter Stats
 
-Find creators instantly with a smart debounced search bar.
-
-📸 [Search Feature](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/search.png)
+#### 📈 Donations Overview for Creators  
+![Supporters Stats](images/supporters-stats.png)
 
 ---
 
 ### 📱 Fully Responsive Design
 
-Works perfectly on phones, tablets, and desktops.
+#### 📱 Responsive Preview
 
-📸 [Responsive - Mobile View](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/responsive-mobile.png)  
-📸 [Responsive - Tablet View](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/responsive-tablet.png)
+#### 📱 Responsive Preview
+
+Experience seamless design across all devices.
+
+- 📱 Mobile View  
+  <div style="display: flex; gap: 1rem; margin:10px">
+    <img src="images/mobile1.png" alt="Mobile View 1" width="30%" />
+    <img src="images/mobile3.png" alt="Mobile View 2" width="30%" />
+  </div>
+
+- 💻 Tablet View  
+  <img src="images/tab.png" alt="Tablet View" width="60%" />
 
 ---
 
