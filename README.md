@@ -1,107 +1,83 @@
-# Buy Me a Chai
+# ☕ Buy Me a Chai
 
-Buy Me a Chai is a crowdfunding platform for developers and creators to get funds from their supporters. Inspired by Patreon and Buy Me a Coffee, this platform aims to provide a simple and effective way for creators to receive financial support for their work.
+A fun and friendly crowdfunding platform where creators and developers can receive support from fans—just like Patreon or Buy Me a Coffee. Think of it as a digital way to say *"Thanks for your work, here's a chai!"*
 
-## Project Overview
-
-This project is built using the MERN stack (MongoDB, Express.js, React.js, Node.js) along with Tailwind CSS for styling and Razorpay for payment integration. Additionally, it supports user authentication using credentials and GitHub.
-
-## Live Demo
-
-Check out the live demo of the project: [Buy Me a Chai](https://buy-me-a-chai-ten.vercel.app/)
-
-## Getting Started
-
-To get started with the project locally, follow these steps:
-
-### Prerequisites
-
-Make sure you have the following installed on your machine:
-
-- Node.js
-- npm or yarn or pnpm or bun
-- MongoDB
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/buy-me-a-chai.git
-   cd buy-me-a-chai
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   # or
-   bun install
-   ```
-
-3. Set up environment variables:
-
-   Create a `.env.local` file in the root directory and add the following variables:
-   ```
-   MONGODB_URI=your_mongodb_connection_string
-   NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your_secret_key
-   GITHUB_CLIENT_ID=your_github_client_id
-   GITHUB_CLIENT_SECRET=your_github_client_secret
-   RAZORPAY_KEY_ID=your_razorpay_key_id
-   RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-   ```
-
-### Running the Development Server
-
-Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Features
-
-- **Crowdfunding Platform**: Users can support developers and creators by donating funds.
-- **User Authentication**: Login using credentials or GitHub.
-- **Payment Integration**: Secure payments through Razorpay.
-- **Responsive Design**: Tailwind CSS ensures the app is fully responsive.
-
-## Learn More
-
-To learn more about Next.js and the technologies used in this project, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - An interactive Next.js tutorial.
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React.js Documentation](https://reactjs.org/)
-- [Node.js Documentation](https://nodejs.org/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/)
-- [Razorpay Documentation](https://razorpay.com/docs/)
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+🔗 **Live Demo**: [https://buy-me-a-chai-ten.vercel.app/](https://buy-me-a-chai-ten.vercel.app/)
 
 ---
 
-Feel free to customize this README file further to better suit your project's specifics and your preferences.
+## 🚀 Overview
+
+**Buy Me a Chai** is a full-stack web app built with the **MERN stack**, **Next.js App Router**, and **Tailwind CSS**. It offers a clean and smooth experience for users to receive or send monetary support. Razorpay powers secure payments, and authentication is handled via GitHub or email/password.
+
+---
+
+## 🧩 Tech Stack
+
+* **Frontend**: React, Next.js 14 (App Router), Tailwind CSS
+* **Backend**: Node.js, Express.js, MongoDB
+* **Authentication**: NextAuth (GitHub + Credentials)
+* **Payments**: Razorpay
+* **Other Tools**: React Toastify, bcryptjs, JWT, use-debounce
+
+---
+
+## ✨ Key Features
+
+### 🔐 User Authentication
+
+Login/signup using GitHub OAuth or email-password (NextAuth).
+
+📸 [Login Screen](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/login.png)
+📸 [Signup Screen](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/signup.png)
+
+---
+
+### 👤 Creator Profiles
+
+Every user gets a public profile page with a cover image, bio, and donation options.
+
+📸 [User Profile](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/profile.png)
+
+---
+
+### 💸 Razorpay Payment Integration
+
+Support creators with real-time, secure payments via Razorpay.
+
+📸 [Payment Modal](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/razorpay.png)
+📸 [Payment Success Toast](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/success-toast.png)
+
+---
+
+### ✏️ Edit Profile
+
+Creators can update name, bio, profile picture, and cover photo.
+
+📸 [Edit Profile](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/edit-profile.png)
+
+---
+
+### 🔍 Search & Discover
+
+Search for any user by name using the smart search bar with debounce.
+
+📸 [Search Users](https://raw.githubusercontent.com/Shreshtha-Garg/buy-me-a-chai/main/screenshots/search.png)
+
+---
+
+### 📱 Responsive UI
+
+Optimized for all screen sizes using Tailwind CSS. Clean, minimal, and mobile-first design.
+
+---
+
+## 💡 Why This Project?
+
+This project was built as a creative take on peer-to-peer support systems, focusing on simplicity, clean UI, and real-time payment integration. It was also a great opportunity to work hands-on with Razorpay and build a production-ready Next.js App Router app.
+
+---
+
+## 🧾 License
+
+MIT License
